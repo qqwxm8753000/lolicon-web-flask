@@ -1,0 +1,39 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - main  # 这里可以根据你的需求更改分支名称
+  pull_request:
+    branches:
+      - main  # 这里可以根据你的需求更改分支名称
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7  # 这里可以根据你的需求更改 Python 版本
+
+      - name: Install dependencies
+        run: |
+          pip install pyinstaller
+          pip install requests
+          pip install flask
+
+      - name: Build executables
+        run: |
+          # 如果你的脚本依赖其他文件夹，可以使用 --add-data 参数添加它们
+          pyinstaller --onefile --add-data 'static:static' --add-data 'templates:templates' app.py
+
+      - name: Upload executables
+        uses: actions/upload-artifact@v2
+        with:
+          name: executables
+          path: dist/app.exe  # 这里根据你的脚本名称进行更改
