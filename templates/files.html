@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Downloaded Files</title>
+    <style>
+        body {
+            background-color: #f2f5f8;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(0, 123, 255, 0.8);
+            border-radius: 8px;
+            color: #ffffff;
+        }
+
+        .container h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .file-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .file-list li {
+            margin-bottom: 10px;
+        }
+
+        .file-list li a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .file-list li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Downloaded Files</h1>
+        <ul class="file-list">
+            {% for file in files %}
+                <li><a href="{{ url_for('static', filename=file) }}">{{ file }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

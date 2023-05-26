@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Logs</title>
+    <style>
+        body {
+            background-color: #f2f5f8;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(0, 123, 255, 0.8);
+            border-radius: 8px;
+            color: #ffffff;
+        }
+
+        .container h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .log-content {
+            white-space: pre-line;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Logs</h1>
+        <div class="log-content">
+            {{ logs }}
+        </div>
+    </div>
+</body>
+</html>
