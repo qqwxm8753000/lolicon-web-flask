@@ -30,7 +30,7 @@ jobs:
       - name: Build executables
         run: |
           # 如果你的脚本依赖其他文件夹，可以使用 --add-data 参数添加它们
-          pyinstaller --onefile --add-data 'static:static' --add-data 'templates:templates' app.py
+          pyinstaller --onefile --add-data 'static;static' --add-data 'templates;templates' app.py
 
       - name: Upload executables
         uses: actions/upload-artifact@v2
