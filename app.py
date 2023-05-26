@@ -50,7 +50,7 @@ def index():
     if request.method == 'POST':
         num = int(request.form['num'])
         download_setu(num)
-        return 'Download completed!'
+        return redirect(url_for('index'))
     return render_template('index.html')
 
 
