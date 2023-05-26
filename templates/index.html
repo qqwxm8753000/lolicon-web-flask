@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Setu Downloader</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        form {
+            margin-top: 20px;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        .return-link {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Setu Downloader</h1>
+        <form method="POST">
+            <label for="num">Number of Images to Download:</label>
+            <input type="number" name="num" id="num" required>
+            <br>
+            <button type="submit" class="button">Download</button>
+        </form>
+        <br>
+        <a href="/files" class="button">View Files</a>
+        <a href="/logs" class="button">View Logs</a>
+        <div class="return-link">
+            <a href="/" class="button">Return to Download Page</a>
+        </div>
+    </div>
+</body>
+</html>
